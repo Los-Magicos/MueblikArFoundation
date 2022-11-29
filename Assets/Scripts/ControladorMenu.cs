@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 public class ControladorMenu : MonoBehaviour
 {
     
+    //Carga una escena. Su uso es en botones.
     public void CargarEscena(string nombreEscena)
     {
-        if(nombreEscena.Equals("Partida"))
+        if(nombreEscena.Equals("Sesion"))
         {
 
             ControladorMusica.instancia.sonidoPartida();
