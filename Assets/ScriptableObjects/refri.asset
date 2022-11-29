@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb30cb9cba76f941bd7d65bde48ef3f, type: 3}
+  m_Name: refri
+  m_EditorClassIdentifier: 
+  ItemName: refri
+  ItemImage: {fileID: 21300000, guid: 432a15fa627a05f4b81b99ac8b7a7fd7, type: 3}
+  ItemDescription: refri
+  Item3DModel: {fileID: 301481398096842665, guid: 6d55038ee41082142990c96ffdfc086d, type: 3}

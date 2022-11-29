@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 35c590b1addd82c40b4fbc2fc4f16b21
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - mainmenucanvas: {instanceID: 0}
+  - itemsmenucanvas: {instanceID: 0}
+  - arcanvas: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
