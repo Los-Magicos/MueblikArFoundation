@@ -10,6 +10,7 @@ public class ControladorMenu : MonoBehaviour
     {
         if(nombreEscena.Equals("Partida"))
         {
+
             ControladorMusica.instancia.sonidoPartida();
         }
         else

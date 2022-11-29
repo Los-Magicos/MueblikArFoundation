@@ -23,17 +23,16 @@ public class ControladorMusica : MonoBehaviour
         if(instancia != null)
         {
             Destroy(this.gameObject);
+            return;
         }
         
         instancia = this;
-
+        DontDestroyOnLoad(this);
+    
         this.musicAudioSource.clip = clip[5];
         this.musicAudioSource.Play();
-
-        DontDestroyOnLoad(this.gameObject);
-
         volumen(PlayerPrefs.GetFloat("volumen", 0.5f));
-        
+
     }
 
     //Reproduce un efecto de sonido al pulsar un boton. Es llamado por botones
@@ -58,7 +57,9 @@ public class ControladorMusica : MonoBehaviour
     public void Silenciar()
     {
 
-        this.mixer.SetFloat("volumen", 0);
+        this.fxAudioSource.clip = clip[3];
+        this.fxAudioSource.Play();
+        this.mixer.SetFloat("volumenMixer", 0);
 
     }
 
