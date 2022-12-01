@@ -16,7 +16,7 @@ public class ControladorOpciones : MonoBehaviour
     private void Start()
     {
         
-        sliderVolumen.value = PlayerPrefs.GetFloat("volumen", 0.5f);
+        //sliderVolumen.value = PlayerPrefs.GetFloat("volumen", 0.5f);
 
     }
 
@@ -44,11 +44,13 @@ public class ControladorOpciones : MonoBehaviour
             filePath = Path;
 
         }, new string[] {fileTypes});
+        /*
         Debug.Log("permiso; " + permiso);
 
         Debug.Log("datapath: " + Application.dataPath + "/Modelos3D/ModeloExportado.dae");
 
         System.IO.File.Copy(filePath, Application.dataPath + "/Modelos3D/ModeloExportado.dae", true);
+        */
         
     }
 
