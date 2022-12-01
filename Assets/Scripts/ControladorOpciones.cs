@@ -12,6 +12,7 @@ public class ControladorOpciones : MonoBehaviour
     [SerializeField] private Toggle toggleSilenciar;
 
 
+
     private void Start()
     {
         
@@ -48,7 +49,7 @@ public class ControladorOpciones : MonoBehaviour
         Debug.Log("datapath: " + Application.dataPath + "/Modelos3D/ModeloExportado.dae");
 
         System.IO.File.Copy(filePath, Application.dataPath + "/Modelos3D/ModeloExportado.dae", true);
-    
+        
     }
 
     //Silencia la musica.
