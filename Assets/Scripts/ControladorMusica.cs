@@ -36,21 +36,11 @@ public class ControladorMusica : MonoBehaviour
 
     }
 
-    public void EfectosIniciales()
+    public void EfectosIniciales(int index)
     {
 
-        StartCoroutine(Efectos());
-
-    }
-
-    IEnumerator Efectos()
-    {
-
-        this.musicAudioSource.clip = clip[4];
-        this.musicAudioSource.Play();
-        yield return new WaitForSeconds(5.0f);
-        this.musicAudioSource.clip = clip[5];
-        this.musicAudioSource.Play();
+        fxAudioSource.clip = clip[index];
+        fxAudioSource.Play();
 
     }
 
@@ -76,22 +66,23 @@ public class ControladorMusica : MonoBehaviour
     public void Silenciar()
     {
 
-        this.fxAudioSource.clip = clip[3];
-        this.fxAudioSource.Play();
-        this.mixer.SetFloat("volumenMixer", 0);
+        this.mixer.SetFloat("volumenMixer", -80);
 
     }
 
     //Vulve a activar el sonido con el valor guardado.
     public void Desenmudecer()
     {
-        this.mixer.SetFloat("volumen", PlayerPrefs.GetFloat("volumen", 0.5f));
+        Debug.Log(PlayerPrefs.GetFloat("volumen", 0.5f) + " Volumen");
+        this.mixer.SetFloat("volumenMixer", PlayerPrefs.GetFloat("volumen", 0.5f));
+        this.fxAudioSource.clip = clip[3];
+        this.fxAudioSource.Play();
     }
     
     //Cambia el volumen del mixer.
     public void volumen(float volumen)
     {
-
+        Debug.Log(PlayerPrefs.GetFloat("volumen", 0.5f) + " Volumen cambiando");
         PlayerPrefs.SetFloat("volumen", volumen);
         this.mixer.SetFloat("volumenMixer", volumen*80 - 80);
 

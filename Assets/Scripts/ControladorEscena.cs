@@ -10,7 +10,6 @@ public class ControladorEscena : MonoBehaviour
     /// </summary>
     public static void CargarEscena(string nombreEscena)
     {
-        ControladorMusica.instancia.sonidoBoton();
         SceneManager.LoadScene(nombreEscena);
     }
     /// <summary>

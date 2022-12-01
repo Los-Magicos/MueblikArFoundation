@@ -11,6 +11,12 @@ public class ControladorOpciones : MonoBehaviour
     [SerializeField] private Toggle toggleSilenciar;
 
 
+    private void Start()
+    {
+        
+        sliderVolumen.value = PlayerPrefs.GetFloat("volumen", 0.5f);
+
+    }
 
     //Cambia el volumen de los efectos. Controlado por un Slider.
     public void Volumen()
@@ -22,18 +28,21 @@ public class ControladorOpciones : MonoBehaviour
     public void CargarEscena(string nombreEscena)
     {
         ControladorEscena.CargarEscena(nombreEscena);
+        ControladorMusica.instancia.sonidoBoton();
     }
 
     //Silencia la musica.
     public void Silenciar()
     {
-
+        Debug.Log("Entrando a silenciar");
         if(toggleSilenciar.isOn)
         {
+            Debug.Log("Desenmudecer");
             ControladorMusica.instancia.Desenmudecer();
         }
         else
         {
+            Debug.Log("Silenciar");
             ControladorMusica.instancia.Silenciar();
         }
 

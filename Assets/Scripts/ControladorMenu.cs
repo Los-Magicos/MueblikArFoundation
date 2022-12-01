@@ -6,16 +6,33 @@ using UnityEngine.SceneManagement;
 public class ControladorMenu : MonoBehaviour
 {
     [SerializeField] private Animator animator;
+    [SerializeField] private GameObject logo;
     
-    /// <summary>
-    /// Start is called on the frame when a script is enabled just before
-    /// any of the Update methods is called the first time.
-    /// </summary>
+
     private void Start()
     {
-        
-        animator.SetBool("InicioApp", true);
-        ControladorMusica.instancia.EfectosIniciales();
+
+        if(PlayerPrefs.GetInt("Inicio", 0) == 0)
+        {
+
+            StartCoroutine(Inicio());
+            PlayerPrefs.SetInt("Inicio", 1);
+
+        }
+        else
+        {
+            logo.gameObject.SetActive(false);
+        }
+    }
+
+    IEnumerator Inicio()
+    {
+
+        ControladorMusica.instancia.EfectosIniciales(4);
+        yield return new WaitForSeconds(5);
+        ControladorMusica.instancia.EfectosIniciales(5);
+        yield return new WaitForSeconds(1.2f);
+        logo.gameObject.SetActive(false);
 
     }
 
@@ -33,12 +50,13 @@ public class ControladorMenu : MonoBehaviour
         }
 
         
-        SceneManager.LoadScene(nombreEscena);
+        ControladorEscena.CargarEscena(nombreEscena);
     }
 
     public void Salir()
     {
         ControladorMusica.instancia.sonidoBoton();
+        PlayerPrefs.SetInt("Inicio", 0);
         Application.Quit();
     }
     
