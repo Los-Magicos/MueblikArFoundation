@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using NativeFilePickerNamespace;
 
 
 public class ControladorOpciones : MonoBehaviour
@@ -31,10 +32,29 @@ public class ControladorOpciones : MonoBehaviour
         ControladorMusica.instancia.sonidoBoton();
     }
 
+    public void Importacion()
+    {
+        string fileTypes  = NativeFilePicker.ConvertExtensionToFileType(".dae");
+        string filePath = "";
+        
+        NativeFilePicker.Permission permiso = NativeFilePicker.PickFile((Path) =>
+        {
+
+            filePath = Path;
+
+        }, new string[] {fileTypes});
+        Debug.Log("permiso; " + permiso);
+
+        Debug.Log("datapath: " + Application.dataPath + "/Modelos3D/ModeloExportado.dae");
+
+        System.IO.File.Copy(filePath, Application.dataPath + "/Modelos3D/ModeloExportado.dae", true);
+    
+    }
+
     //Silencia la musica.
     public void Silenciar()
     {
-        Debug.Log("Entrando a silenciar");
+        //Debug.Log("Entrando a silenciar");
         if(toggleSilenciar.isOn)
         {
             Debug.Log("Desenmudecer");
