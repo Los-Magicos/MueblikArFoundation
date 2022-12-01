@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb30cb9cba76f941bd7d65bde48ef3f, type: 3}
+  m_Name: mesanew
+  m_EditorClassIdentifier: 
+  ItemName: mesanew
+  ItemImage: {fileID: 21300000, guid: 0304c4024d0249841aa90487d7ff47e2, type: 3}
+  ItemDescription: mesanew
+  Item3DModel: {fileID: 4263324424006773374, guid: c6211cead3dd85f4493109b7b315523c, type: 3}
