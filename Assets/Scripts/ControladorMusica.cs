@@ -12,6 +12,7 @@ public class ControladorMusica : MonoBehaviour
     [SerializeField] private AudioSource musicAudioSource;
     [SerializeField] private AudioMixer mixer;
 
+
     [SerializeField] private List<AudioClip> clip;
 
     private float fxVolumen;
@@ -29,9 +30,27 @@ public class ControladorMusica : MonoBehaviour
         instancia = this;
         DontDestroyOnLoad(this);
     
+        //this.musicAudioSource.clip = clip[5];
+        //this.musicAudioSource.Play();
+        volumen(PlayerPrefs.GetFloat("volumen", 0.5f));
+
+    }
+
+    public void EfectosIniciales()
+    {
+
+        StartCoroutine(Efectos());
+
+    }
+
+    IEnumerator Efectos()
+    {
+
+        this.musicAudioSource.clip = clip[4];
+        this.musicAudioSource.Play();
+        yield return new WaitForSeconds(5.0f);
         this.musicAudioSource.clip = clip[5];
         this.musicAudioSource.Play();
-        volumen(PlayerPrefs.GetFloat("volumen", 0.5f));
 
     }
 
